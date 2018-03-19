@@ -61,6 +61,7 @@ class Game extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {
       history: [{
         squares: Array(9).fill(null),
@@ -122,7 +123,7 @@ class Game extends React.Component {
         <div className="game-board">
           <Board 
             squares={current.squares}
-            onClick={i => this.handleClick(i)}
+            onClick={this.handleClick}
           />
         </div>
         <div className="game-info">
